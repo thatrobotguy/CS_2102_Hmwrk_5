@@ -1,11 +1,30 @@
 import java.util.GregorianCalendar;
+
 public class WeatherMonitor {
 	
-	//private LinkedList<
+	/*
+	The weather data you are tracking is initially gathered from 
+	a weather sensor that produces readings containing
+	1. time of the reading (hour and minute, both ints) 
+	2. temperature in degrees Fahrenheit (use an int).
+	Because the volume of readings is so high, your weather monitor will store 
+	only the date (use the Java class GregorianCalendar, see 
+	description below) and two temperature readings:
+	1. lowest temperature of the day
+	2. highest temperature of the day.
+	To manage the daily weather data, your WeatherMonitor must also 
+	provide a method addDailyReport that consumes a date and a list 
+	of readings (nominally for that date) and stores a daily report 
+	for the given date (computing the high and low temperature 
+	readings from the given list of readings for that date). 
+	For Part 1 of this assignment, the WeatherMonitor's daily reports 
+	should be stored in a LinkedList.
+	*/
 	public WeatherMonitor(){}
 	
 	public int averageHighForMonth(int month, int year){
-		
+		int day = 1;
+		GregorianCalendar testday = new GregorianCalendar(year, month, day);
 		return 0;
 	}
 	
@@ -13,4 +32,8 @@ public class WeatherMonitor {
 		return 0;
 	}
 	
+	private static int daysInMonth()
+	{
+		
+	}
 }
