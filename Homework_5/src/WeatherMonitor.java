@@ -46,12 +46,14 @@ public class WeatherMonitor {
 	private Reading getHigh()
 	{
 		int highTemp = this.readings.get(0).getTemp();
-		Reading testRead = new Reading(new GregorianCalendar(0,0,0), 0);
+		Reading testRead = new Reading(this.readings.get(0).getReadingDate(), 
+				this.readings.get(0).getTemp());
 		for (Reading aread : this.readings)
 		{
 			if (aread.getTemp() > highTemp)
 			{
 				highTemp = aread.getTemp();
+				testRead = aread;
 			}
 		}
 		return 
