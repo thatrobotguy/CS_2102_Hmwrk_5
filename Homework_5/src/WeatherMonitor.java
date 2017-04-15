@@ -22,6 +22,7 @@ public class WeatherMonitor {
 	should be stored in a LinkedList.
 	*/
 	private LinkedList<Reading> readings;
+	private LinkedList<Reading> holdrealreading;
 	
 	WeatherMonitor(LinkedList<Reading> readings)
 	// This is the constructor
@@ -29,54 +30,49 @@ public class WeatherMonitor {
 		this.readings = readings;
 	}
 	
-	public int averageHighForMonth(int month, int year){
-		int averageHigh = 0;
+	public int averageHighForMonth(int month, int year){		
+		holdrealreading = new LinkedList<Reading>();		
 		for (Reading aRead : this.readings)
 		{
 			if (aRead.inMonth(year, month))
 			{
-				return this.averageHigh();
+				holdrealreading.add(aRead);				
 			}
 		}
-		return averageHigh;
+		return averageHigh();
 	}
 	
 	public int averageLowForMonth(int month, int year){
-		int averageLow = 0;
+		holdrealreading = new LinkedList<Reading>();
 		for (Reading aRead : this.readings)
 		{
 			if (aRead.inMonth(year, month))
 			{
-				return this.averageLow();
+				holdrealreading.add(aRead);				
 			}
-		}
-		return averageLow;
+		}		
+		return averageLow();
 	}
-	
-	
 	
 	private int averageLow() // This gets the hig
 	{
 		int elements = 0, totalLows = 0;
-		for (Reading aread : this.readings) {
+		for (Reading aread : holdrealreading) {
 			totalLows += aread.getLowTemp();
 			elements++;
 		}
+		holdrealreading = null;
 		return totalLows/elements;
 	}
 	
 	private int averageHigh() // This gets the hig
 	{
-		int elements = 0, totalHighs = 0;
-		// int highTemp = this.readings.get(0).getTemp();
-		/* Reading testRead = new Reading(this.readings.get(0).getReadingDate(), 
-		   this.readings.get(0).getTemp());
-		 */
-		for (Reading aread : this.readings) {
+		int elements = 0, totalHighs = 0;		
+		for (Reading aread : holdrealreading) {
 			totalHighs += aread.getHighTemp();
 			elements++;
 		}
+		holdrealreading = null;
 		return totalHighs/elements;
 	}
-	
 }
