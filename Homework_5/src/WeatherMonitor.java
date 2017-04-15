@@ -1,4 +1,5 @@
 import java.util.GregorianCalendar;
+import java.util.LinkedList;
 
 public class WeatherMonitor {
 	
@@ -20,20 +21,30 @@ public class WeatherMonitor {
 	For Part 1 of this assignment, the WeatherMonitor's daily reports 
 	should be stored in a LinkedList.
 	*/
-	public WeatherMonitor(){}
+	private LinkedList<Reading> readings;
+	
+	public WeatherMonitor(LinkedList<Reading> readings)
+	{
+		this.readings = readings;
+	}
 	
 	public int averageHighForMonth(int month, int year){
 		int day = 1;
-		GregorianCalendar testday = new GregorianCalendar(year, month, day);
+		// GregorianCalendar testday = new GregorianCalendar(year, month, day);
+		for (day = 1; day < this.readings.size(); day++) // (Reading aread : this.readings)
+		{
+			
+		}
 		return 0;
 	}
 	
 	public int averageLowForMonth(int month, int year){
+		
 		return 0;
 	}
 	
 	private static int daysInMonth()
 	{
-		
+		return 0;
 	}
 }
