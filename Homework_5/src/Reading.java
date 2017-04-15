@@ -4,15 +4,13 @@ import java.util.LinkedList;
 public class Reading {
 
 	private GregorianCalendar date;
-	private int highTemp;
-	private int lowTemp;
+	private int temp;
 	
-	Reading(GregorianCalendar date, int lowTemp, int highTemp)
+	Reading(GregorianCalendar date, int temp)
 	{
 		this.date = date; // the version with 5 arguments. maybe just 3?
 		// a year, a month, a day of month, an hour, and a minute
-		this.lowTemp = lowTemp;
-		this.highTemp = highTemp;
+		this.temp = temp;
 	}
 	
 	public boolean inMonth(int year, int month)
@@ -24,18 +22,25 @@ public class Reading {
 		} else return false;
 	}
 	
+	public boolean inDay(int year, int month, int day)
+	{
+		if (this.inMonth(year, month))
+		{
+			if (this.getDate().DAY_OF_MONTH == day)
+			{
+				return true;
+			} else return false;
+		} else return false;
+	}
+	
 	public GregorianCalendar getDate()
 	{
 		return this.date;
 	}
 	
-	public int getHighTemp()
+	public int getTemp()
 	{
-		return this.highTemp;
+		return this.temp;
 	}
-	
-	public int getLowTemp()
-	{
-		return this.lowTemp;
-	}
+
 }

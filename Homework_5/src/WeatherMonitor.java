@@ -31,15 +31,17 @@ public class WeatherMonitor {
 	}
 	
 	public int averageHighForMonth(int month, int year){		
-		holdrealreading = new LinkedList<Reading>();		
+		holdrealreading = new LinkedList<Reading>();
+		int counter = 1;
 		for (Reading aRead : this.readings)
 		{
-			if (aRead.inMonth(year, month))
+			if (aRead.inDay(year, month, counter))
 			{
-				holdrealreading.add(aRead);				
+				holdrealreading.add(aRead.averageHigh(year, month, counter));				
+				counter++;
 			}
 		}
-		return averageHigh();
+		return holdrealreading.averageHigh();
 	}
 	
 	public int averageLowForMonth(int month, int year){
@@ -54,23 +56,26 @@ public class WeatherMonitor {
 		return averageLow();
 	}
 	
-	private int averageLow() // This gets the hig
+	private int averageLow(int day) // This gets the hig
 	{
 		int elements = 0, totalLows = 0;
 		for (Reading aread : holdrealreading) {
-			totalLows += aread.getLowTemp();
+			totalLows += aread.getTemp();
 			elements++;
 		}
 		holdrealreading = null;
 		return totalLows/elements;
 	}
 	
-	private int averageHigh() // This gets the hig
+	private int averageHigh(int year, int month, int day) // This gets the hig
 	{
 		int elements = 0, totalHighs = 0;		
 		for (Reading aread : holdrealreading) {
-			totalHighs += aread.getHighTemp();
+			if (aread.inDay(year, month, day))
+			{
+			totalHighs += aread.getTemp();
 			elements++;
+			}
 		}
 		holdrealreading = null;
 		return totalHighs/elements;
