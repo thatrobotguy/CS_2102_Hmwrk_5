@@ -23,44 +23,60 @@ public class WeatherMonitor {
 	*/
 	private LinkedList<Reading> readings;
 	
-	public WeatherMonitor(LinkedList<Reading> readings)
+	WeatherMonitor(LinkedList<Reading> readings)
+	// This is the constructor
 	{
 		this.readings = readings;
 	}
 	
 	public int averageHighForMonth(int month, int year){
-		int day = 1;
-		// GregorianCalendar testday = new GregorianCalendar(year, month, day);
-		for (day = 1; day < this.readings.size(); day++) // (Reading aread : this.readings)
+		int averageHigh = 0;
+		for (Reading aRead : this.readings)
 		{
-			
+			if (aRead.inMonth(year, month))
+			{
+				return this.averageHigh();
+			}
 		}
-		return 0;
+		return averageHigh;
 	}
 	
 	public int averageLowForMonth(int month, int year){
-		
-		return 0;
-	}
-	
-	private Reading getHigh()
-	{
-		int highTemp = this.readings.get(0).getTemp();
-		Reading testRead = new Reading(this.readings.get(0).getReadingDate(), 
-				this.readings.get(0).getTemp());
-		for (Reading aread : this.readings)
+		int averageLow = 0;
+		for (Reading aRead : this.readings)
 		{
-			if (aread.getTemp() > highTemp)
+			if (aRead.inMonth(year, month))
 			{
-				highTemp = aread.getTemp();
-				testRead = aread;
+				return this.averageLow();
 			}
 		}
-		return 
+		return averageLow;
 	}
 	
-	private static int daysInMonth()
+	
+	
+	private int averageLow() // This gets the hig
 	{
-		return 0;
+		int elements = 0, totalLows = 0;
+		for (Reading aread : this.readings) {
+			totalLows += aread.getLowTemp();
+			elements++;
+		}
+		return totalLows/elements;
 	}
+	
+	private int averageHigh() // This gets the hig
+	{
+		int elements = 0, totalHighs = 0;
+		// int highTemp = this.readings.get(0).getTemp();
+		/* Reading testRead = new Reading(this.readings.get(0).getReadingDate(), 
+		   this.readings.get(0).getTemp());
+		 */
+		for (Reading aread : this.readings) {
+			totalHighs += aread.getHighTemp();
+			elements++;
+		}
+		return totalHighs/elements;
+	}
+	
 }
