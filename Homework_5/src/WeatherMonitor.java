@@ -43,6 +43,20 @@ public class WeatherMonitor {
 		return 0;
 	}
 	
+	private Reading getHigh()
+	{
+		int highTemp = this.readings.get(0).getTemp();
+		Reading testRead = new Reading(new GregorianCalendar(0,0,0), 0);
+		for (Reading aread : this.readings)
+		{
+			if (aread.getTemp() > highTemp)
+			{
+				highTemp = aread.getTemp();
+			}
+		}
+		return 
+	}
+	
 	private static int daysInMonth()
 	{
 		return 0;
