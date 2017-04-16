@@ -2,35 +2,14 @@ import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 public class WeatherMonitor {
-	
-	/*
-	The weather data you are tracking is initially gathered from 
-	a weather sensor that produces readings containing
-	1. time of the reading (hour and minute, both ints) 
-	2. temperature in degrees Fahrenheit (use an int).
-	Because the volume of readings is so high, your weather monitor will store 
-	only the date (use the Java class GregorianCalendar, see 
-	description below) and two temperature readings:
-	1. lowest temperature of the day
-	2. highest temperature of the day.
-	To manage the daily weather data, your WeatherMonitor must also 
-	provide a method addDailyReport that consumes a date and a list 
-	of readings (nominally for that date) and stores a daily report 
-	for the given date (computing the high and low temperature 
-	readings from the given list of readings for that date). 
-	For Part 1 of this assignment, the WeatherMonitor's daily reports 
-	should be stored in a LinkedList.
-	*/
-	private LinkedList<Reading> readings;
-	private LinkedList<Reading> holdrealreading;
-	private LinkedList<DailyWeatherReport> dailyreport;
-	
-	WeatherMonitor(LinkedList<Reading> readings)
-	// This is the constructor
+	// private LinkedList<Reading> readings;
+	private LinkedList<DailyWeatherReport> dailyreports;
+
+	WeatherMonitor(LinkedList<DailyWeatherReport> dailyreports)
 	{
-		this.readings = readings;
+		this.dailyreports = dailyreports;
 	}
-	
+
 	public int averageHighForMonth(int month, int year){		
 		holdrealreading = new LinkedList<Reading>();
 		int counter = 1;
@@ -44,7 +23,7 @@ public class WeatherMonitor {
 		}
 		return 0;//holdrealreading.averageHigh();
 	}
-	
+
 	public int averageLowForMonth(int month, int year){
 		holdrealreading = new LinkedList<Reading>();
 		for (Reading aRead : this.readings)
@@ -56,63 +35,42 @@ public class WeatherMonitor {
 		}		
 		return 0;//holdrealreading.averageLow();
 	}
-	
+
 	private int averageLow(int day) // This gets the hig
-	{
-		int elements = 0, totalLows = 0;
-		for (Reading aread : holdrealreading) {
-			totalLows += aread.getTemp();
-			elements++;
-		}
-		holdrealreading = null;
-		return totalLows/elements;
+	{   int elements = 0, totalLows = 0;
+	for (Reading aread : holdrealreading){
+		totalLows += aread.getTemp();
+		elements++;	}
+	holdrealreading = null;
+	return totalLows/elements;
 	}
-	
+
 	private int averageHigh(int year, int month, int day) // This gets the hig
 	{
-		int elements = 0, totalHighs = 0;		
+		LinkedList<Reading> holdrealreading;
+		int elements = 0, totalHighs = 0;  	
 		for (Reading aread : holdrealreading) {
 			if (aread.inDay(year, month, day))
 			{
-			totalHighs += aread.getTemp();
-			elements++;
+				totalHighs += aread.getTemp();
+				elements++;
 			}
 		}
 		holdrealreading = null;
 		return totalHighs/elements;
 	}
-	
-	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> reading){
-		/*To manage the daily weather data, your WeatherMonitor must also 
-		 * provide a method addDailyReport that consumes a date and a list 
-		 * of readings (nominally for that date) and stores a daily report 
-		 * for the given date (computing the high and low temperature readings 
-		 * from the given list of readings for that date). For Part 1 of this 
-		 * assignment, the WeatherMonitor's daily reports should be stored in 
-		 * a LinkedList.}
-		 */
-		int max = 0;
-		int min = 0;
-		LinkedList<Reading> hold = new LinkedList<Reading>();
-		for (Reading aRead: reading){
-			if (date.DATE == aRead.getDate().DATE){
-					hold.add(aRead);
-			}
-		}
-		if (hold.size() == 0){
-			return;
-		}
-		else{
-		for (Reading aRead: hold){
-			if (aRead.HighTemp(max)){
+
+	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings){
+		// assume that the list "readings" isn't empty
+		int max = readings.get(0).getTemp(); int min = readings.get(0).getTemp();
+		for (Reading aRead: readings){
+			if (aRead.highTemp(max)){
 				max = aRead.getTemp();
 			}
-			else if (aRead.LowTemp(min)){
+			else if (aRead.lowTemp(min)){
 				min = aRead.getTemp();
 			}
-			else {}
-			}
-		dailyreport.add(new DailyWeatherReport(date,max,min));}
+			dailyreports.add(new DailyWeatherReport(date,max,min));
 		}
-		
+	}		
 }
