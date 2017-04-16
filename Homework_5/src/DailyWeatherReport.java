@@ -6,7 +6,7 @@ public class DailyWeatherReport {
 	private int hightemp;
 	private int lowtemp;
 	
-	public DailyWeatherReport(GregorianCalendar date,int hightemp,int lowtemp){
+	public DailyWeatherReport(GregorianCalendar date, int hightemp,int lowtemp){
 		this.date = date;
 		this.hightemp = hightemp;
 		this.lowtemp = lowtemp;

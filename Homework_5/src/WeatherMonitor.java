@@ -2,24 +2,16 @@ import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 public class WeatherMonitor {
-	// private LinkedList<Reading> readings;
 	private LinkedList<DailyWeatherReport> dailyreports;
-
 	WeatherMonitor(LinkedList<DailyWeatherReport> dailyreports)
-	{
-		this.dailyreports = dailyreports;
-	}
-
+	{ this.dailyreports = dailyreports; }
+	
 	public int averageHighForMonth(int month, int year){		
-		holdrealreading = new LinkedList<Reading>();
 		int counter = 1;
-		for (Reading aRead : this.readings)
-		{
-			if (aRead.inDay(year, month, counter))
-			{
+		for (DailyWeatherReport aReport : dailyreports)
+		{			
 				//holdrealreading.add(aRead.averageHigh(year, month, counter));				
-				counter++;
-			}
+				counter++;			
 		}
 		return 0;//holdrealreading.averageHigh();
 	}
@@ -54,7 +46,7 @@ public class WeatherMonitor {
 			{
 				totalHighs += aread.getTemp();
 				elements++;
-			}
+			}	
 		}
 		holdrealreading = null;
 		return totalHighs/elements;
@@ -70,8 +62,7 @@ public class WeatherMonitor {
 			}
 			else if (aRead.lowTemp(min)){
 				min = aRead.getTemp();
-			}
-			
+			}			
 		}
 		dailyreports.add(new DailyWeatherReport(date,max,min));
 	}		
