@@ -7,27 +7,32 @@ public class WeatherMonitor {
 	{ this.dailyreports = dailyreports; }
 	
 	public int averageHighForMonth(int month, int year){		
-		int counter = 1;
+		int elements = 1; int totalHigh = 0;
 		for (DailyWeatherReport aReport : dailyreports)
 		{			
-				//holdrealreading.add(aRead.averageHigh(year, month, counter));				
-				counter++;			
+			if (aReport.inMonth(year, month))
+			{
+				totalHigh += aReport.getHigh();				
+				elements++;	
+			}
 		}
-		return 0;//holdrealreading.averageHigh();
+		return totalHigh/elements;//holdrealreading.averageHigh();
 	}
 
 	public int averageLowForMonth(int month, int year){
-		holdrealreading = new LinkedList<Reading>();
-		for (Reading aRead : this.readings)
-		{
-			if (aRead.inMonth(year, month))
+		int elements = 1; int totalLow = 0;
+		for (DailyWeatherReport aReport : dailyreports)
+		{			
+			if (aReport.inMonth(year, month))
 			{
-				holdrealreading.add(aRead);				
+				totalLow += aReport.getLow();				
+				elements++;	
 			}
-		}		
-		return 0;//holdrealreading.averageLow();
+		}
+		return totalLow/elements;//holdrealreading.averageHigh();
 	}
 
+	/*
 	private int averageLow(int day) // This gets the hig
 	{   int elements = 0, totalLows = 0;
 	for (Reading aread : holdrealreading){
@@ -51,6 +56,7 @@ public class WeatherMonitor {
 		holdrealreading = null;
 		return totalHighs/elements;
 	}
+	*/
 
 	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings){
 		// assume that the list "readings" isn't empty
