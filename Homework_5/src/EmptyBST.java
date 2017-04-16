@@ -11,12 +11,12 @@ public class EmptyBST implements IBST {
 	}
 
 	// returns BST containing all existing elements and the given element
-	public IBST addElt(String elt) {
+	public IBST addElt(DailyWeatherReport elt) {
 		return new DataBST(elt, new EmptyBST(), new EmptyBST());
 	}
 
 	// determines whether the given element is in the BST
-	public boolean hasElt(String elt) {
+	public boolean hasElt(DailyWeatherReport elt) {
 		return false;
 	}
 
@@ -36,6 +36,22 @@ public class EmptyBST implements IBST {
 
 	public LinkedList<DailyWeatherReport> makeList() {
 		// TODO Auto-generated method stub
+		return new LinkedList<DailyWeatherReport>();
+	}
+
+	public DailyWeatherReport getData() {
+		// TODO Aut;o-generated method stub
 		return null;
+	}
+
+
+	public int addHigh(int year, int month) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int addLow(int year, int month) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

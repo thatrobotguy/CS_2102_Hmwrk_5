@@ -11,7 +11,7 @@ public class List implements ISet {
 		return dailyreports.size();
 	}
 
-	public ISet addElt(String elt) {
+	public ISet addElt(DailyWeatherReport elt) {
 		dailyreports.add(elt);
 		return this;
 	}
@@ -62,12 +62,12 @@ public class List implements ISet {
 	}
 
 	public LinkedList<DailyWeatherReport> makeList() {
-		LinkedList<DailyWeatherReport> result = new LinkedList<DailyWeatherReport>();
-		for (DailyWeatherReport aReport: this)
-		{
+		//LinkedList<DailyWeatherReport> result = new LinkedList<DailyWeatherReport>();
+		//for (DailyWeatherReport aReport: this)
+		//{
 			
-		}
-		return ;
+		//}
+		return this.dailyreports;
 	}
 
 }
