@@ -63,14 +63,16 @@ public class WeatherMonitor {
 	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings){
 		// assume that the list "readings" isn't empty
 		int max = readings.get(0).getTemp(); int min = readings.get(0).getTemp();
-		for (Reading aRead: readings){
+		for (Reading aRead: readings)
+		{
 			if (aRead.highTemp(max)){
 				max = aRead.getTemp();
 			}
 			else if (aRead.lowTemp(min)){
 				min = aRead.getTemp();
 			}
-			dailyreports.add(new DailyWeatherReport(date,max,min));
+			
 		}
+		dailyreports.add(new DailyWeatherReport(date,max,min));
 	}		
 }
