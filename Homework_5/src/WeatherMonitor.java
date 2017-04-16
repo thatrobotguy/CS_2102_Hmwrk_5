@@ -3,6 +3,7 @@ import java.util.LinkedList;
 
 public class WeatherMonitor {
 	private LinkedList<DailyWeatherReport> dailyreports;
+	// private ISet dailyreports;
 	WeatherMonitor(LinkedList<DailyWeatherReport> dailyreports)
 	{ this.dailyreports = dailyreports; }
 	
