@@ -23,6 +23,7 @@ public class WeatherMonitor {
 	*/
 	private LinkedList<Reading> readings;
 	private LinkedList<Reading> holdrealreading;
+	private LinkedList<DailyWeatherReport> dailyreport;
 	
 	WeatherMonitor(LinkedList<Reading> readings)
 	// This is the constructor
@@ -37,11 +38,11 @@ public class WeatherMonitor {
 		{
 			if (aRead.inDay(year, month, counter))
 			{
-				holdrealreading.add(aRead.averageHigh(year, month, counter));				
+				//holdrealreading.add(aRead.averageHigh(year, month, counter));				
 				counter++;
 			}
 		}
-		return holdrealreading.averageHigh();
+		return 0;//holdrealreading.averageHigh();
 	}
 	
 	public int averageLowForMonth(int month, int year){
@@ -53,7 +54,7 @@ public class WeatherMonitor {
 				holdrealreading.add(aRead);				
 			}
 		}		
-		return holdrealreading.averageLow();
+		return 0;//holdrealreading.averageLow();
 	}
 	
 	private int averageLow(int day) // This gets the hig
@@ -80,4 +81,38 @@ public class WeatherMonitor {
 		holdrealreading = null;
 		return totalHighs/elements;
 	}
+	
+	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> reading){
+		/*To manage the daily weather data, your WeatherMonitor must also 
+		 * provide a method addDailyReport that consumes a date and a list 
+		 * of readings (nominally for that date) and stores a daily report 
+		 * for the given date (computing the high and low temperature readings 
+		 * from the given list of readings for that date). For Part 1 of this 
+		 * assignment, the WeatherMonitor's daily reports should be stored in 
+		 * a LinkedList.}
+		 */
+		int max = 0;
+		int min = 0;
+		LinkedList<Reading> hold = new LinkedList<Reading>();
+		for (Reading aRead: reading){
+			if (date.DATE == aRead.getDate().DATE){
+					hold.add(aRead);
+			}
+		}
+		if (hold.size() == 0){
+			return;
+		}
+		else{
+		for (Reading aRead: hold){
+			if (aRead.HighTemp(max)){
+				max = aRead.getTemp();
+			}
+			else if (aRead.LowTemp(min)){
+				min = aRead.getTemp();
+			}
+			else {}
+			}
+		dailyreport.add(new DailyWeatherReport(date,max,min));}
+		}
+		
 }

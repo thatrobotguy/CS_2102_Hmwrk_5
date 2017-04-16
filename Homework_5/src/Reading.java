@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-=======
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
@@ -15,6 +13,7 @@ public class Reading {
 		// a year, a month, a day of month, an hour, and a minute
 		this.temp = temp;
 	}
+	//Reading()
 	
 	public boolean inMonth(int year, int month)
 	{
@@ -46,5 +45,17 @@ public class Reading {
 		return this.temp;
 	}
 
+	public boolean HighTemp(int temp){
+		if (temp < this.temp)
+		return true;
+		else
+		return false;
+	}
+	public boolean LowTemp(int temp){
+		if (temp > this.temp)
+			return true;
+		else
+			return false;
+	}
 }
->>>>>>> branch 'master' of https://github.com/thatrobotguy/CS_2102_Hmwrk_5.git
+
