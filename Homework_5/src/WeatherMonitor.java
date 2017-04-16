@@ -9,13 +9,13 @@ public class WeatherMonitor {
 	{ this.dailyreports = dailyreports; }
 	
 	public int averageHighForMonth(int month, int year){		
-		int elements = 1; int totalHigh = 0;
+		int elements = 0; int totalHigh = 0;
 		for (DailyWeatherReport aReport : dailyreports)
 		{
 			if (aReport.inMonth(year, month))
 			{
-				totalHigh += aReport.getHigh();				
 				elements++;	
+				totalHigh += aReport.getHigh();				
 			}
 		}
 		return totalHigh/elements;//holdrealreading.averageHigh();
