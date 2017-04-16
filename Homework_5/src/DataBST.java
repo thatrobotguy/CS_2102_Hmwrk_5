@@ -27,8 +27,7 @@ public class DataBST implements IBST {
 		else if (elt.getLow()<this.data.getLow())//if this data low is smaller than the 
 			//data code then put on left side else put on right side. elt.compareTo(this.data) < 0)
 			return new DataBST(this.data, this.left.addElt(elt), this.right);
-		else // elt > this.data
-			return new DataBST(this.data, this.left, this.right.addElt(elt));
+		else return new DataBST(this.data, this.left, this.right.addElt(elt)); // elt > this.data
 	}
 
 	// determines whether the given element is in the BST
