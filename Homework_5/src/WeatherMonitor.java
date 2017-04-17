@@ -32,7 +32,7 @@ public class WeatherMonitor {
 		holder = dailyreports.makeList(holder);
 		for (DailyWeatherReport aReport : holder)
 		{			
-			if (aReport.inMonth(year, month))
+			if (aReport.inMonth(month, year))
 			{
 				totalLow += aReport.getLow();				
 				elements++;	
