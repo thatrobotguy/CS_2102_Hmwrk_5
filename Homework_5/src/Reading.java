@@ -14,25 +14,25 @@ public class Reading {
 	}
 
 	public int getHour() {
-		return hour;
+		return this.hour;
 	}
 
 	public int getMinute() {
-		return minute;
+		return this.minute;
 	}
 
 	public int getTemp() {
-		return temp;
+		return this.temp;
 	}
 	
 	public boolean highTemp(int max)
 	{
-		if (this.getTemp() >= max){return true;} else return false;
+		return (this.getTemp() >= max);
 	}
 	
 	public boolean lowTemp(int low)
 	{
-		if (this.getTemp() <= low){return true;} else return false;
+		return (this.getTemp() <= low);
 	}
 }
 

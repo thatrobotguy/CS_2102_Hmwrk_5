@@ -12,6 +12,11 @@ public class DailyWeatherReport {
 		this.lowtemp = lowtemp;
 	}
 	
+	public boolean inMonth(int year, int month)
+	{
+		return year == this.date.YEAR && month == this.date.MONTH;
+	}
+	
 	public int getHigh(){
 		return this.hightemp;
 	}
