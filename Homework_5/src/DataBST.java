@@ -21,6 +21,7 @@ public class DataBST implements IBST {
 	}
 
 	// returns BST containing all existing elements and the given element
+
 	public IBST addElt(DailyWeatherReport elt) {
 		if (elt.getDate().equals(this.data.getDate()))
 			return this; // not storing duplicate values
@@ -63,7 +64,7 @@ public class DataBST implements IBST {
 	{
 		return this.data;
 	}
-	
+	/*
 	public int addHigh(int year, int month)
 	{
 		if (this.data.inMonth(year, month))
@@ -77,7 +78,7 @@ public class DataBST implements IBST {
 		{	counter++;
 			return this.data.getLow() + this.left.addLow(year, month) + this.right.addLow(year, month);
 		} else { counter++; return this.left.addLow(year, month) + this.right.addLow(year, month);}	
-	}
+	}*/
 /*	
 	public int averageLowForMonth(int month, int year) {
 		counter = 0;

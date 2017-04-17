@@ -7,7 +7,6 @@ public class WeatherMonitor {
 	// WeatherMonitor(LinkedList<DailyWeatherReport> dailyreports)
 	WeatherMonitor(ISet dailyreports)
 	{ this.dailyreports = dailyreports; }
-
 	public int averageHighForMonth(int month, int year){		
 		int elements = 0; int totalHigh = 0;
 		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();

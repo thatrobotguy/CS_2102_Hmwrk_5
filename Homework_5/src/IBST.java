@@ -12,7 +12,7 @@ public interface IBST extends ISet{
 	// determines whether given element is in the BST
 	boolean hasElt(DailyWeatherReport elt);
 
-	int addHigh(int year, int month);
-	int addLow(int year, int month);
+	//int addHigh(int year, int month);
+	//int addLow(int year, int month);
 	
 }

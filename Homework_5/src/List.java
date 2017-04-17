@@ -6,7 +6,9 @@ public class List implements ISet {
 
 	List() {
 	}
-
+	public LinkedList<DailyWeatherReport> getList(){
+		return this.dailyreports;
+	}
 	public int size() {
 		return dailyreports.size();
 	}
@@ -62,7 +64,7 @@ public class List implements ISet {
 		return totalLow/elements;
 	}
 */
-	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings) {
+	/*public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings) {
 		// assume that the list "readings" isn't empty
 		int max = readings.get(0).getTemp(); int min = readings.get(0).getTemp();
 		for (Reading aRead: readings)
@@ -75,7 +77,7 @@ public class List implements ISet {
 			}			
 		}
 		dailyreports.add(new DailyWeatherReport(date,max,min));
-	}
+	}*/
 
 	public LinkedList<DailyWeatherReport> makeList(LinkedList<DailyWeatherReport> list) {
 		return this.dailyreports;
