@@ -7,8 +7,8 @@ public class WeatherMonitor {
 	// WeatherMonitor(LinkedList<DailyWeatherReport> dailyreports)
 	WeatherMonitor(ISet dailyreports)
 	{ this.dailyreports = dailyreports; }
-	public int averageHighForMonth(int month, int year){		
-		int elements = 1; int totalHigh = 0;
+	public int averageHighForMonth(int year, int month){		
+		int elements = 0; int totalHigh = 0;
 		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
 		//LinkedList<Integer> compute = new LinkedList<Integer>();
 		holder = dailyreports.makeList(holder);
@@ -24,10 +24,10 @@ public class WeatherMonitor {
 	}
 
 	public int averageLowForMonth(int month, int year){
-		int elements = 1; int totalLow = 0;
+		int elements = 0; int totalLow = 0;
 		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
 		//LinkedList<Integer> compute = new LinkedList<Integer>();
-		dailyreports.makeList(holder);
+		holder = dailyreports.makeList(holder);
 		for (DailyWeatherReport aReport : holder)
 		{			
 			if (aReport.inMonth(year, month))
@@ -44,7 +44,7 @@ public class WeatherMonitor {
 		//LinkedList<Reading> holder = new LinkedList<Reading>()
 		//readings.makeList1(read);
 		// assume that the list "readings" isn't empty
-		int max =0; int min = 0;
+		int max = readings.get(0).getTemp(); int min = readings.get(0).getTemp();
 		for (Reading s : readings){
 			//if (!s.IsDayHourMin(date))
 			//{
