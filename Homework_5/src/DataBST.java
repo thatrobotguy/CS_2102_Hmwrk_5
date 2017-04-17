@@ -39,7 +39,7 @@ public class DataBST implements IBST {
 		else // elt > this.data
 			return this.right.hasElt(elt);
 	}
-
+/*
 	public int averageHighForMonth(int month, int year) {
 		counter = 0;
 		//LinkedList<Integer> hold = new LinkedList<Integer>();
@@ -58,7 +58,7 @@ public class DataBST implements IBST {
 		counter = 0;
 		return elt/elements;
 	}
-
+*/
 	public DailyWeatherReport getData()
 	{
 		return this.data;
@@ -78,7 +78,7 @@ public class DataBST implements IBST {
 			return this.data.getLow() + this.left.addLow(year, month) + this.right.addLow(year, month);
 		} else { counter++; return this.left.addLow(year, month) + this.right.addLow(year, month);}	
 	}
-	
+/*	
 	public int averageLowForMonth(int month, int year) {
 		counter = 0;
 		//LinkedList<Integer> hold = new LinkedList<Integer>();
@@ -97,7 +97,7 @@ public class DataBST implements IBST {
 		counter = 0;
 		return elt/elements;
 	}
-
+*/
 	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings) {
 		// TODO Auto-generated method stub
 		
@@ -110,4 +110,6 @@ public class DataBST implements IBST {
 		right.makeList(list);	
 		return list;
 	}
+
+
 }

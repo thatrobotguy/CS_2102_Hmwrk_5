@@ -19,7 +19,7 @@ public class List implements ISet {
 	public boolean hasElt(String elt) {
 		return dailyreports.contains(elt);
 	}
-
+/*
 	public int averageHighForMonth(int month, int year) {
 		int elements = 0; int totalHigh = 0;
 		for (DailyWeatherReport aReport : dailyreports)
@@ -45,7 +45,7 @@ public class List implements ISet {
 		}
 		return totalLow/elements;
 	}
-
+*/
 	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings) {
 		// assume that the list "readings" isn't empty
 		int max = readings.get(0).getTemp(); int min = readings.get(0).getTemp();
@@ -61,19 +61,14 @@ public class List implements ISet {
 		dailyreports.add(new DailyWeatherReport(date,max,min));
 	}
 
-	public LinkedList<DailyWeatherReport> makeList() {
-		//LinkedList<DailyWeatherReport> result = new LinkedList<DailyWeatherReport>();
-		//for (DailyWeatherReport aReport: this)
-		//{
-			
-		//}
+	public LinkedList<DailyWeatherReport> makeList(LinkedList<DailyWeatherReport> list) {
 		return this.dailyreports;
 	}
 
-	public LinkedList<DailyWeatherReport> makeList(
-			LinkedList<DailyWeatherReport> list) {
+	public LinkedList<Reading> makeList1(LinkedList<Reading> list) {
 		// TODO Auto-generated method stub
 		return list;
 	}
+
 
 }

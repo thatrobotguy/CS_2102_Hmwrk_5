@@ -34,11 +34,6 @@ public class EmptyBST implements IBST {
 		
 	}
 
-	public LinkedList<DailyWeatherReport> makeList() {
-		// TODO Auto-generated method stub
-		return new LinkedList<DailyWeatherReport>();
-	}
-
 	public DailyWeatherReport getData() {
 		// TODO Aut;o-generated method stub
 		return null;
@@ -57,6 +52,11 @@ public class EmptyBST implements IBST {
 
 	public LinkedList<DailyWeatherReport> makeList(
 			LinkedList<DailyWeatherReport> list) {
+		// TODO Auto-generated method stub
+		return list;
+	}
+
+	public LinkedList<Reading> makeList1(LinkedList<Reading> list) {
 		// TODO Auto-generated method stub
 		return list;
 	}

@@ -34,5 +34,8 @@ public class Reading {
 	{
 		return (this.getTemp() <= low);
 	}
+	public boolean IsDayHourMin(GregorianCalendar date){
+		return this.hour == date.HOUR && this.minute == date.MINUTE;
+	}
 }
 

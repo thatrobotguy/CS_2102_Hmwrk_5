@@ -2,18 +2,18 @@ import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 public class WeatherMonitor {
-	// private LinkedList<DailyWeatherReport> dailyreports;
+	private LinkedList<DailyWeatherReport> dailyreports1;
 	private ISet dailyreports;
 	// WeatherMonitor(LinkedList<DailyWeatherReport> dailyreports)
 	WeatherMonitor(ISet dailyreports)
 	{ this.dailyreports = dailyreports; }
-	
+
 	public int averageHighForMonth(int month, int year){		
-		int elements = 1; int totalHigh = 0;
-		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
-		LinkedList<Integer> compute = new LinkedList<Integer>();
-		dailyreports.makeList(holder);
-		for (DailyWeatherReport aReport : holder)
+		int elements = 0; int totalHigh = 0;
+		//LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
+		//LinkedList<Integer> compute = new LinkedList<Integer>();
+		//dailyreports.makeList(holder);
+		for (DailyWeatherReport aReport : dailyreports1)
 		{			
 			if (aReport.inMonth(year, month))
 			{
@@ -25,11 +25,11 @@ public class WeatherMonitor {
 	}
 
 	public int averageLowForMonth(int month, int year){
-		int elements = 1; int totalLow = 0;
-		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
-		LinkedList<Integer> compute = new LinkedList<Integer>();
-		dailyreports.makeList(holder);
-		for (DailyWeatherReport aReport : holder)
+		int elements = 0; int totalLow = 0;
+		//LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
+		//LinkedList<Integer> compute = new LinkedList<Integer>();
+		//dailyreports.makeList(holder);
+		for (DailyWeatherReport aReport : dailyreports1)
 		{			
 			if (aReport.inMonth(year, month))
 			{
@@ -40,10 +40,29 @@ public class WeatherMonitor {
 		return totalLow/elements;//dailyreports.averageLowForMonth(month, year);
 	}
 
-	public void addDailyReport(GregorianCalendar date, ISet readings){
+	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings){
+
+		//LinkedList<Reading> read = new LinkedList<Reading>();
+		//LinkedList<Reading> holder = new LinkedList<Reading>()
+		//readings.makeList1(read);
 		// assume that the list "readings" isn't empty
-		/*int max = readings.get(0).getTemp(); int min = readings.get(0).getTemp();
-		for (Reading aRead: readings)
+		int max =0; int min = 0;
+		for (Reading s : readings){
+			//if (!s.IsDayHourMin(date))
+			//{
+			//	holder.add(s);		
+			if (s.highTemp(max))
+			{
+				max = s.getTemp();
+			}
+			if (s.lowTemp(min))
+			{
+				min = s.getTemp();
+			}	
+			//}		
+		}
+		//; int min = readings.get(0).getTemp();
+		/*for (Reading int max = dailyreports1.get(0).getTemp()aRead: s)
 		{			
 			if (aRead.highTemp(max)){
 				max = aRead.getTemp();
@@ -52,15 +71,15 @@ public class WeatherMonitor {
 				min = aRead.getTemp();
 			}			
 		}*/
-		//dailyreports.add(new DailyWeatherReport(date,max,min));
+		dailyreports.addElt(new DailyWeatherReport(date,max,min));
 	}		
-	
+
 	public int average(LinkedList<Integer> list){
 		int sum = 0;
 		for (int a : list){
 			sum += a;
 		}
 		return sum/list.size();
-		
+
 	}
 }
