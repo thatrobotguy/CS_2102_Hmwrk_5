@@ -10,10 +10,10 @@ public class WeatherMonitor {
 
 	public int averageHighForMonth(int month, int year){		
 		int elements = 0; int totalHigh = 0;
-		//LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
+		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
 		//LinkedList<Integer> compute = new LinkedList<Integer>();
-		//dailyreports.makeList(holder);
-		for (DailyWeatherReport aReport : dailyreports1)
+		dailyreports.makeList(holder);
+		for (DailyWeatherReport aReport : holder)
 		{			
 			if (aReport.inMonth(year, month))
 			{
@@ -26,10 +26,10 @@ public class WeatherMonitor {
 
 	public int averageLowForMonth(int month, int year){
 		int elements = 0; int totalLow = 0;
-		//LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
+		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
 		//LinkedList<Integer> compute = new LinkedList<Integer>();
-		//dailyreports.makeList(holder);
-		for (DailyWeatherReport aReport : dailyreports1)
+		dailyreports.makeList(holder);
+		for (DailyWeatherReport aReport : holder)
 		{			
 			if (aReport.inMonth(year, month))
 			{
@@ -41,7 +41,6 @@ public class WeatherMonitor {
 	}
 
 	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings){
-
 		//LinkedList<Reading> read = new LinkedList<Reading>();
 		//LinkedList<Reading> holder = new LinkedList<Reading>()
 		//readings.makeList1(read);
@@ -61,7 +60,6 @@ public class WeatherMonitor {
 			}	
 			//}		
 		}
-		//; int min = readings.get(0).getTemp();
 		/*for (Reading int max = dailyreports1.get(0).getTemp()aRead: s)
 		{			
 			if (aRead.highTemp(max)){

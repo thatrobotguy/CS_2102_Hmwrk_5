@@ -21,9 +21,9 @@ public class DataBST implements IBST {
 	}
 
 	// returns BST containing all existing elements and the given element
-	public void addElt(DailyWeatherReport elt) {
+	public IBST addElt(DailyWeatherReport elt) {
 		if (elt.getDate().equals(this.data.getDate()))
-			return; // not storing duplicate values
+			return this; // not storing duplicate values
 		else if (elt.getLow()<this.data.getLow())//if this data low is smaller than the 
 			//data code then put on left side else put on right side. elt.compareTo(this.data) < 0)
 			return new DataBST(this.data, this.left.addElt(elt), this.right);

@@ -12,13 +12,29 @@ public class List implements ISet {
 	}
 
 	public ISet addElt(DailyWeatherReport elt) {
-		dailyreports.add(elt);
-		return this;
+		if (this.hasElt(elt))
+		{
+			return this;
+		}
+		else 
+		{
+			dailyreports.add(elt);
+			return this;
+		}		
 	}
 
-	public boolean hasElt(String elt) {
-		return dailyreports.contains(elt);
+	public boolean hasElt(DailyWeatherReport aReport) {
+		for (DailyWeatherReport arep: this.dailyreports)
+		{
+			 if (arep.getDate().YEAR == aReport.getDate().YEAR && 
+					arep.getDate().MONTH == aReport.getDate().MONTH && 
+					 arep.getDate().DAY_OF_MONTH == aReport.getDate().DAY_OF_MONTH &&
+					  arep.getDate().HOUR == aReport.getDate().HOUR && 
+					   arep.getDate().MINUTE == aReport.getDate().MINUTE)
+			 { return true;	} else return false;
+		} return false;
 	}
+	
 /*
 	public int averageHighForMonth(int month, int year) {
 		int elements = 0; int totalHigh = 0;
