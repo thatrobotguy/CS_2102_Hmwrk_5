@@ -17,7 +17,7 @@ public class WeatherMonitor {
 	}
 
 	public int averageLowForMonth(int month, int year){
-		holdrealreading = new LinkedList<Reading>();
+		//holdrealreading = new LinkedList<Reading>();
 		for (Reading aRead : this.readings)
 		{
 			if (aRead.inMonth(year, month))
