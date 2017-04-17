@@ -8,10 +8,10 @@ public class WeatherMonitor {
 	WeatherMonitor(ISet dailyreports)
 	{ this.dailyreports = dailyreports; }
 	public int averageHighForMonth(int month, int year){		
-		int elements = 0; int totalHigh = 0;
+		int elements = 1; int totalHigh = 0;
 		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
 		//LinkedList<Integer> compute = new LinkedList<Integer>();
-		dailyreports.makeList(holder);
+		holder = dailyreports.makeList(holder);
 		for (DailyWeatherReport aReport : holder)
 		{			
 			if (aReport.inMonth(year, month))
@@ -24,7 +24,7 @@ public class WeatherMonitor {
 	}
 
 	public int averageLowForMonth(int month, int year){
-		int elements = 0; int totalLow = 0;
+		int elements = 1; int totalLow = 0;
 		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
 		//LinkedList<Integer> compute = new LinkedList<Integer>();
 		dailyreports.makeList(holder);

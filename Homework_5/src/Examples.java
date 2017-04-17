@@ -17,9 +17,9 @@ public class Examples {
 		reading.add(new Reading(10, 16, 50));
 		reading.add(new Reading(1, 10, 67));
 		reading.add(new Reading(9, 00, 50));
-		test.add(new DailyWeatherReport(new GregorianCalendar(2017, 4, 22), 67, 30));
+		//test.add(new DailyWeatherReport(new GregorianCalendar(2017, 4, 22), 67, 30));
 		weather.addDailyReport(new GregorianCalendar(2017, 4, 22), reading);
-		//assertTrue(test.equals();
+		assertEquals(67, weather.averageHighForMonth(4, 2017));
 	}
 
 }

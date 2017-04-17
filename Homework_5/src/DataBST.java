@@ -78,7 +78,7 @@ public class DataBST implements IBST {
 		{	counter++;
 			return this.data.getLow() + this.left.addLow(year, month) + this.right.addLow(year, month);
 		} else { counter++; return this.left.addLow(year, month) + this.right.addLow(year, month);}	
-	}*/
+	}
 /*	
 	public int averageLowForMonth(int month, int year) {
 		counter = 0;

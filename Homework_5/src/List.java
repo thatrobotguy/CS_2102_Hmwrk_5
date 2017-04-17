@@ -2,7 +2,7 @@ import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 public class List implements ISet {
-	private LinkedList<DailyWeatherReport> dailyreports;
+	private LinkedList<DailyWeatherReport> dailyreports = new LinkedList<DailyWeatherReport>();
 
 	List() {
 	}
