@@ -5,21 +5,22 @@ import java.util.LinkedList;
 import org.junit.Test;
 
 public class Examples {
-	LinkedList<Reading> reading = new LinkedList<Reading>();
+	LinkedList<Reading> readings = new LinkedList<Reading>();
 	LinkedList<DailyWeatherReport> test = new LinkedList<DailyWeatherReport>();
 	ISet tester = new List();
 	WeatherMonitor weather = new WeatherMonitor(tester);
+	
 	@Test
-	public void test() {
-		reading.add(new Reading(8, 11, 30));
-		reading.add(new Reading(9, 11, 45));
-		reading.add(new Reading(12, 11, 60));
-		reading.add(new Reading(10, 16, 50));
-		reading.add(new Reading(1, 10, 67));
-		reading.add(new Reading(9, 00, 50));
+	public void test1() {
+		readings.add(new Reading(8, 11, 30));
+		readings.add(new Reading(9, 11, 45));
+		readings.add(new Reading(12, 11, 60));
+		readings.add(new Reading(10, 16, 50));
+		readings.add(new Reading(1, 10, 67));
+		readings.add(new Reading(9, 00, 50));
 		//test.add(new DailyWeatherReport(new GregorianCalendar(2017, 4, 22), 67, 30));
-		weather.addDailyReport(new GregorianCalendar(2017, 4, 22), reading);
-		assertEquals(67, weather.averageHighForMonth(4, 2017));
+		weather.addDailyReport(new GregorianCalendar(2017, 4, 22), readings);
+		assertEquals(67, weather.averageHighForMonth(2017, 4));
 	}
 
 }
