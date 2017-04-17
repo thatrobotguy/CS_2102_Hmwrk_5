@@ -20,6 +20,8 @@ public class WeatherMonitor {
 				elements++;	
 			}
 		}
+		if (elements == 0){return 0;}
+		else
 		return totalHigh/elements;//dailyreports.averageLowForMonth(month, year);
 	}
 
@@ -36,6 +38,8 @@ public class WeatherMonitor {
 				elements++;	
 			}
 		}
+		if (elements == 0){return 0;}
+		else
 		return totalLow/elements;//dailyreports.averageLowForMonth(month, year);
 	}
 
