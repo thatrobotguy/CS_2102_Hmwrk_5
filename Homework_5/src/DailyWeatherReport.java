@@ -14,6 +14,8 @@ public class DailyWeatherReport {
 	
 	public boolean inMonth(int year, int month)
 	{
+		int test = this.date.YEAR;
+		int another = this.date.get(1);
 		return year == this.date.YEAR && month == this.date.MONTH;
 	}
 	
