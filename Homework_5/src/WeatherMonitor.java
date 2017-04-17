@@ -22,15 +22,17 @@ public class WeatherMonitor {
 	}
 
 	public int averageLowForMonth(int month, int year){
-		/*int elements = 1; int totalLow = 0;
-		for (DailyWeatherReport aReport : dailyreports)
+		int elements = 1; int totalLow = 0;
+		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
+		dailyreports.makeList(holder);
+		for (DailyWeatherReport aReport : holder)
 		{			
 			if (aReport.inMonth(year, month))
 			{
 				totalLow += aReport.getLow();				
 				elements++;	
 			}
-		}*/
+		}
 		return dailyreports.averageLowForMonth(month, year);
 	}
 
