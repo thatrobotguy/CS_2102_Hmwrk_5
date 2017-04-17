@@ -9,21 +9,25 @@ public class WeatherMonitor {
 	{ this.dailyreports = dailyreports; }
 	
 	public int averageHighForMonth(int month, int year){		
-		/*int elements = 0; int totalHigh = 0;
-		for (DailyWeatherReport aReport : dailyreports)
-		{
+		int elements = 1; int totalHigh = 0;
+		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
+		LinkedList<Integer> compute = new LinkedList<Integer>();
+		dailyreports.makeList(holder);
+		for (DailyWeatherReport aReport : holder)
+		{			
 			if (aReport.inMonth(year, month))
 			{
-				elements++;	
 				totalHigh += aReport.getHigh();				
+				elements++;	
 			}
-		}*/
-		return dailyreports.averageHighForMonth(month, year);
+		}
+		return totalHigh/elements;//dailyreports.averageLowForMonth(month, year);
 	}
 
 	public int averageLowForMonth(int month, int year){
 		int elements = 1; int totalLow = 0;
 		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
+		LinkedList<Integer> compute = new LinkedList<Integer>();
 		dailyreports.makeList(holder);
 		for (DailyWeatherReport aReport : holder)
 		{			
@@ -33,7 +37,7 @@ public class WeatherMonitor {
 				elements++;	
 			}
 		}
-		return dailyreports.averageLowForMonth(month, year);
+		return totalLow/elements;//dailyreports.averageLowForMonth(month, year);
 	}
 
 	public void addDailyReport(GregorianCalendar date, ISet readings){
@@ -50,4 +54,13 @@ public class WeatherMonitor {
 		}*/
 		//dailyreports.add(new DailyWeatherReport(date,max,min));
 	}		
+	
+	public int average(LinkedList<Integer> list){
+		int sum = 0;
+		for (int a : list){
+			sum += a;
+		}
+		return sum/list.size();
+		
+	}
 }
