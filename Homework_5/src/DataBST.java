@@ -103,8 +103,11 @@ public class DataBST implements IBST {
 		
 	}
 
-	public LinkedList<DailyWeatherReport> makeList() {
+	public LinkedList<DailyWeatherReport> makeList(LinkedList<DailyWeatherReport> list) {
 		// TODO Auto-generated method stub
-		return null;
+		list.add(this.getData());
+		left.makeList(list);
+		right.makeList(list);	
+		return list;
 	}
 }

@@ -9,7 +9,7 @@ public class WeatherMonitor {
 	{ this.dailyreports = dailyreports; }
 	
 	public int averageHighForMonth(int month, int year){		
-		int elements = 0; int totalHigh = 0;
+		/*int elements = 0; int totalHigh = 0;
 		for (DailyWeatherReport aReport : dailyreports)
 		{
 			if (aReport.inMonth(year, month))
@@ -17,12 +17,12 @@ public class WeatherMonitor {
 				elements++;	
 				totalHigh += aReport.getHigh();				
 			}
-		}
-		return totalHigh/elements;//holdrealreading.averageHigh();
+		}*/
+		return dailyreports.averageHighForMonth(month, year);
 	}
 
 	public int averageLowForMonth(int month, int year){
-		int elements = 1; int totalLow = 0;
+		/*int elements = 1; int totalLow = 0;
 		for (DailyWeatherReport aReport : dailyreports)
 		{			
 			if (aReport.inMonth(year, month))
@@ -30,13 +30,13 @@ public class WeatherMonitor {
 				totalLow += aReport.getLow();				
 				elements++;	
 			}
-		}
-		return totalLow/elements;//holdrealreading.averageHigh();
+		}*/
+		return dailyreports.averageLowForMonth(month, year);
 	}
 
-	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings){
+	public void addDailyReport(GregorianCalendar date, ISet readings){
 		// assume that the list "readings" isn't empty
-		int max = readings.get(0).getTemp(); int min = readings.get(0).getTemp();
+		/*int max = readings.get(0).getTemp(); int min = readings.get(0).getTemp();
 		for (Reading aRead: readings)
 		{			
 			if (aRead.highTemp(max)){
@@ -45,7 +45,7 @@ public class WeatherMonitor {
 			if (aRead.lowTemp(min)){
 				min = aRead.getTemp();
 			}			
-		}
-		dailyreports.add(new DailyWeatherReport(date,max,min));
+		}*/
+		//dailyreports.add(new DailyWeatherReport(date,max,min));
 	}		
 }

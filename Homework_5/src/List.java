@@ -70,4 +70,10 @@ public class List implements ISet {
 		return this.dailyreports;
 	}
 
+	public LinkedList<DailyWeatherReport> makeList(
+			LinkedList<DailyWeatherReport> list) {
+		// TODO Auto-generated method stub
+		return list;
+	}
+
 }

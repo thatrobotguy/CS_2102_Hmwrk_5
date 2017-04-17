@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 
 public interface IBST extends ISet{
 	// returns BST containing all existing elements and the given element
@@ -12,4 +14,6 @@ public interface IBST extends ISet{
 	boolean hasElt(DailyWeatherReport elt);
 
 	int addHigh(int year, int month);
-	int addLow(int year, int month);}
+	int addLow(int year, int month);
+	
+}
