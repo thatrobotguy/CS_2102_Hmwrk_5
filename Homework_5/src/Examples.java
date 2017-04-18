@@ -88,6 +88,27 @@ public class Examples {
 		readings.add(new Reading(1, 59, 21));
 		readings.add(new Reading(4, 40, 10));
 		weather2.addDailyReport(new GregorianCalendar(2014, 5, 27), readings);		
-		assertEquals(16, weather2.averageLowForMonth(5, 2014));
+		assertEquals(15, weather2.averageLowForMonth(5, 2014));
+	}
+	@Test
+	public void test6(){ // This tests with an IBST and 
+		readings.add(new Reading(8, 11, 22));
+		readings.add(new Reading(9, 11, 45));
+		readings.add(new Reading(12, 11, 60));
+		readings.add(new Reading(10, 16, 50));
+		readings.add(new Reading(1, 10, 67));
+		readings.add(new Reading(9, 00, 50));
+		weather.addDailyReport(new GregorianCalendar(2014, 4, 22), readings);
+		readings.add(new Reading(1, 10, 21));
+		readings.add(new Reading(9, 00, 50));
+		readings.add(new Reading(10, 10, 21));
+		readings.add(new Reading(5, 4, 100));
+		weather.addDailyReport(new GregorianCalendar(2014, 5, 22), readings);	
+		readings.add(new Reading(6, 30, 21));
+		readings.add(new Reading(6, 00, 50));
+		readings.add(new Reading(1, 59, 21));
+		readings.add(new Reading(4, 40, 105));
+		weather.addDailyReport(new GregorianCalendar(2014, 5, 27), readings);		
+		assertEquals(102, weather.averageHighForMonth(5, 2014));
 	}
 }

@@ -56,7 +56,7 @@ public class WeatherMonitor {
 		if (dailyreports == null)
 			dailyreports = new DataBST(new DailyWeatherReport(date,max,min));
 		else
-			dailyreports.addElt(new DailyWeatherReport(date,max,min));
+			dailyreports = dailyreports.addElt(new DailyWeatherReport(date,max,min));
 	}		
 
 	public int average(LinkedList<Integer> list){

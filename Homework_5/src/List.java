@@ -29,11 +29,11 @@ public class List implements ISet {
 	public boolean hasElt(DailyWeatherReport aReport) {
 		for (DailyWeatherReport arep: this.dailyreports)
 		{
-			if (arep.getDate().YEAR == aReport.getDate().YEAR && 
-					arep.getDate().MONTH == aReport.getDate().MONTH && 
-					arep.getDate().DAY_OF_MONTH == aReport.getDate().DAY_OF_MONTH &&
-					arep.getDate().HOUR == aReport.getDate().HOUR && 
-					arep.getDate().MINUTE == aReport.getDate().MINUTE)
+			if (arep.getDate().get(1) == aReport.getDate().get(1) && 
+					arep.getDate().get(2) == aReport.getDate().get(2) && 
+					arep.getDate().get(3)== aReport.getDate().get(3)&&
+					arep.getDate().get(4) == aReport.getDate().get(4) && 
+					arep.getDate().get(5)== aReport.getDate().get(5))
 			{ return true;	} else return false;
 		} return false;
 	}
