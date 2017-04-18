@@ -72,6 +72,9 @@ public class WeatherMonitor {
 				min = aRead.getTemp();
 			}			
 		}*/
+		if (dailyreports == null)
+			dailyreports = new DataBST(new DailyWeatherReport(date,max,min));
+		else
 		dailyreports.addElt(new DailyWeatherReport(date,max,min));
 	}		
 

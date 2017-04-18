@@ -3,6 +3,7 @@ import java.util.LinkedList;
 
 public class EmptyBST implements IBST {
 	private DailyWeatherReport data;
+	
 	EmptyBST() {
 	}
 
@@ -13,6 +14,7 @@ public class EmptyBST implements IBST {
 
 	// returns BST containing all existing elements and the given element
 	public IBST addElt(DailyWeatherReport elt) {
+		//this.data = elt;
 		return new DataBST(elt, new EmptyBST(), new EmptyBST());
 	}
 

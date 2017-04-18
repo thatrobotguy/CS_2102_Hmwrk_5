@@ -7,13 +7,19 @@ public class DataBST implements IBST {
 	IBST right;
 	private LinkedList<Integer> hold = new LinkedList<Integer>();
 	private int counter = 0;
-
-
+	
 	DataBST(DailyWeatherReport data, IBST left, IBST right) {
 		this.data = data;
 		this.left = left;
 		this.right = right;
 	}
+
+	DataBST(DailyWeatherReport data) {
+		this.data = data;
+		this.left = new EmptyBST();
+		this.right = new EmptyBST();
+	}
+	
 	
 	// returns the number of distinct elements in the BST
 	public int size() {
@@ -99,10 +105,10 @@ public class DataBST implements IBST {
 		return elt/elements;
 	}
 */
-	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings) {
+	/*public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings) {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 
 	public LinkedList<DailyWeatherReport> makeList(LinkedList<DailyWeatherReport> list) {
 		// TODO Auto-generated method stub
