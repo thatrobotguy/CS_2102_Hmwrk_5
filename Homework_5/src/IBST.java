@@ -7,6 +7,7 @@ public interface IBST extends ISet{
 	// returns the number of distinct elements in the BST
 	int size();
 
+	// Get the data
 	DailyWeatherReport getData();
 
 	// determines whether given element is in the BST

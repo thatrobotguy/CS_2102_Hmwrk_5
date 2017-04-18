@@ -108,4 +108,10 @@ public class Examples {
 		weather.addDailyReport(new GregorianCalendar(2014, 5, 27), readings);		
 		assertEquals(102, weather.averageHighForMonth(5, 2014));
 	}
+	
+	@Test
+	public void test7() // For kicks
+	{
+		assertEquals(0, weather.averageHighForMonth(2017, 4));
+	}
 }

@@ -5,8 +5,6 @@ public class DataBST implements IBST {
 	DailyWeatherReport data;
 	IBST left;
 	IBST right;
-	private LinkedList<Integer> hold = new LinkedList<Integer>();
-	private int counter = 0;
 	
 	DataBST(DailyWeatherReport data, IBST left, IBST right) {
 		this.data = data;
@@ -26,7 +24,6 @@ public class DataBST implements IBST {
 	}
 
 	// returns BST containing all existing elements and the given element
-
 	public IBST addElt(DailyWeatherReport elt) {
 		if (elt.getDate().equals(this.data.getDate()))
 			return this; // not storing duplicate values
@@ -46,18 +43,17 @@ public class DataBST implements IBST {
 			return this.right.hasElt(elt);
 	}
 	
+	// Get the data
 	public DailyWeatherReport getData()
 	{
 		return this.data;
 	}
-
+	
+	// Convert to list.
 	public LinkedList<DailyWeatherReport> makeList(LinkedList<DailyWeatherReport> list) {
-		// TODO Auto-generated method stub
 		list.add(this.getData());
 		left.makeList(list);
 		right.makeList(list);	
 		return list;
 	}
-
-
 }

@@ -43,7 +43,6 @@ public class List implements ISet {
 	}
 
 	public LinkedList<Reading> makeList1(LinkedList<Reading> list) {
-		// TODO Auto-generated method stub
 		return list;
 	}
 }

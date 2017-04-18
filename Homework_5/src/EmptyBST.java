@@ -23,20 +23,17 @@ public class EmptyBST implements IBST {
 		return false;
 	}
 
-
+	// Get the data
 	public DailyWeatherReport getData() {
-		// TODO Aut;o-generated method stub
 		return this.data;
 	}
 
-	public LinkedList<DailyWeatherReport> makeList(
-			LinkedList<DailyWeatherReport> list) {
-		// TODO Auto-generated method stub
+	public LinkedList<DailyWeatherReport> 
+	makeList(LinkedList<DailyWeatherReport> list) {
 		return list;
 	}
 
 	public LinkedList<Reading> makeList1(LinkedList<Reading> list) {
-		// TODO Auto-generated method stub
 		return list;
 	}
 }
