@@ -1,49 +1,57 @@
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
-
+//Andrew Schueler and Mary Hatfalvi
 public class WeatherMonitor {
-	private LinkedList<DailyWeatherReport> dailyreports1;
+	// private ISet
 	private ISet dailyreports;
+	// constructor 
 	WeatherMonitor(ISet dailyreports)
 	{ this.dailyreports = dailyreports; }
-	public int averageHighForMonth(int year, int month){		
+	
+	// takes in 2 ints of a year and month and returns the average high temp
+	//for that month 
+	public int averageHighForMonth(int month, int year){		
 		int elements = 0; int totalHigh = 0;
+		// list holder that is used to convert data from any data structure
 		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
-		holder = dailyreports.makeList(holder);
+		// make a linked list from data
+		holder = computelist(month, year);
 		for (DailyWeatherReport aReport : holder)
-		{			
-			if (aReport.inMonth(year, month))
-			{
+		{		
+				//add the high to total high
 				totalHigh += aReport.getHigh();				
-				elements++;	
-			}
+				elements++;	//  increment elements 
 		}
-		if (elements == 0){return 0;}
-		else
+		if (elements == 0){return 0;}// if there is no data for that month return 0
+		else // else return the average high temp
 			return totalHigh/elements;
 	}
 
+	// takes in 2 ints of a year and month and returns the average low temp
+		//for that month 
 	public int averageLowForMonth(int month, int year){
 		int elements = 0; int totalLow = 0;
+		// list holder that is used to convert data from any data structure
 		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
-		holder = dailyreports.makeList(holder);
+		// make a linked list from data
+		holder = computelist(month, year);
 		for (DailyWeatherReport aReport : holder)
-		{			
-			if (aReport.inMonth(month, year))
-			{
+		{		//add the low to total low
 				totalLow += aReport.getLow();				
-				elements++;	
-			}
+				elements++;	//  increment elements 
+			
 		}
-		if (elements == 0){return 0;}
+		if (elements == 0){return 0;}// if there is no data for that month return 0
 		else
-			return totalLow/elements;//dailyreports.averageLowForMonth(month, year);
+			return totalLow/elements;// else return the average low temp
 	}
 
 	public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings){
 		// assume that the list "readings" isn't empty
+		// Initialize max and min temperatures to first element
 		int max = readings.get(0).getTemp(); int min = readings.get(0).getTemp();
-		for (Reading s : readings){		
+		for (Reading s : readings){	
+		// for each reading find the highest and lowest temp and store them 
 			if (s.highTemp(max))
 			{
 				max = s.getTemp();
@@ -53,17 +61,26 @@ public class WeatherMonitor {
 				min = s.getTemp();
 			}		
 		}
-		if (dailyreports == null)
+		if (dailyreports == null)// if daily reports has no data set then default to data
+			// BST
 			dailyreports = new DataBST(new DailyWeatherReport(date,max,min));
-		else
+		else// else add element to whatever data structure created
 			dailyreports = dailyreports.addElt(new DailyWeatherReport(date,max,min));
 	}		
 
-	public int average(LinkedList<Integer> list){
-		int sum = 0;
-		for (int a : list){
-			sum += a;
+	// helper function for finding daily reports only for a certain month and year 
+	private LinkedList<DailyWeatherReport> computelist(int month, int year){
+		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
+		LinkedList<DailyWeatherReport> holder2 = new LinkedList<DailyWeatherReport>();
+		// make a linked list from data
+		holder = dailyreports.makeList(holder);
+		for (DailyWeatherReport aReport : holder)
+		{	// for every dailyweatherreport check if it is within the same month and year		
+			if (aReport.inMonth(month, year))
+			{	// if yes then add to new list
+				holder2.add(aReport);
+			}
 		}
-		return sum/list.size();
+		return holder2;
 	}
 }

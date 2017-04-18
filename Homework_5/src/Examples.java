@@ -34,7 +34,6 @@ public class Examples {
 		readings.add(new Reading(10, 16, 50));
 		readings.add(new Reading(1, 10, 67));
 		readings.add(new Reading(9, 00, 50));
-		//test.add(new DailyWeatherReport(new GregorianCalendar(2017, 4, 22), 67, 30));
 		weather.addDailyReport(new GregorianCalendar(2017, 4, 22), readings);
 		assertEquals(30, weather.averageLowForMonth(4, 2017));
 	}
@@ -45,8 +44,7 @@ public class Examples {
 		readings.add(new Reading(12, 11, 60));
 		readings.add(new Reading(10, 16, 70));
 		readings.add(new Reading(1, 10, 67));
-		readings.add(new Reading(9, 00, 50));
-		//test.add(new DailyWeatherReport(new GregorianCalendar(2017, 4, 22), 67, 30));
+		readings.add(new Reading(9, 00, 50));		
 		weather.addDailyReport(new GregorianCalendar(2017, 4, 22), readings);
 		readings.add(new Reading(1, 10, 67));
 		readings.add(new Reading(9, 00, 50));
@@ -61,7 +59,6 @@ public class Examples {
 		readings.add(new Reading(10, 16, 50));
 		readings.add(new Reading(1, 10, 67));
 		readings.add(new Reading(9, 00, 50));
-		//test.add(new DailyWeatherReport(new GregorianCalendar(2017, 4, 22), 67, 30));
 		weather2.addDailyReport(new GregorianCalendar(2017, 4, 22), readings);
 		readings.add(new Reading(1, 10, 21));
 		readings.add(new Reading(9, 00, 50));
