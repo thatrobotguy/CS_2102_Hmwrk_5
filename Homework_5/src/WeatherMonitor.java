@@ -20,13 +20,12 @@ public class WeatherMonitor {
 		}
 		if (elements == 0){return 0;}
 		else
-			return totalHigh/elements;//dailyreports.averageLowForMonth(month, year);
+			return totalHigh/elements;
 	}
 
 	public int averageLowForMonth(int month, int year){
 		int elements = 0; int totalLow = 0;
 		LinkedList<DailyWeatherReport> holder = new LinkedList<DailyWeatherReport>();
-		//LinkedList<Integer> compute = new LinkedList<Integer>();
 		holder = dailyreports.makeList(holder);
 		for (DailyWeatherReport aReport : holder)
 		{			

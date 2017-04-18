@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 public class EmptyBST implements IBST {
 	private DailyWeatherReport data;
-	
+
 	EmptyBST() {
 	}
 
@@ -23,36 +23,12 @@ public class EmptyBST implements IBST {
 		return false;
 	}
 
-	/*public int averageHighForMonth(int month, int year) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public int averageLowForMonth(int month, int year) {
-		// TODO Auto-generated method stub
-		return 0;
-	}*/
-
-	//public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings) {
-		
-//	}
 
 	public DailyWeatherReport getData() {
 		// TODO Aut;o-generated method stub
 		return this.data;
 	}
 
-/*
-	public int addHigh(int year, int month) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public int addLow(int year, int month) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-*/
 	public LinkedList<DailyWeatherReport> makeList(
 			LinkedList<DailyWeatherReport> list) {
 		// TODO Auto-generated method stub

@@ -3,12 +3,13 @@ import java.util.LinkedList;
 
 public class List implements ISet {
 	private LinkedList<DailyWeatherReport> dailyreports = new LinkedList<DailyWeatherReport>();
-
 	List() {
 	}
+	
 	public LinkedList<DailyWeatherReport> getList(){
 		return this.dailyreports;
 	}
+	
 	public int size() {
 		return dailyreports.size();
 	}
@@ -45,6 +46,4 @@ public class List implements ISet {
 		// TODO Auto-generated method stub
 		return list;
 	}
-
-
 }

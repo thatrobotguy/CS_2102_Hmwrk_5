@@ -20,7 +20,6 @@ public class DataBST implements IBST {
 		this.right = new EmptyBST();
 	}
 	
-	
 	// returns the number of distinct elements in the BST
 	public int size() {
 		return 1 + this.left.size() + this.right.size();
@@ -46,69 +45,11 @@ public class DataBST implements IBST {
 		else // elt > this.data
 			return this.right.hasElt(elt);
 	}
-/*
-	public int averageHighForMonth(int month, int year) {
-		counter = 0;
-		//LinkedList<Integer> hold = new LinkedList<Integer>();
-		//int elements = this.size();//  int totalHigh = 0;
-			//if(this.data.inMonth(year, month)){
-			//	hold.add(this.data.getHigh());
-			//}
-			//else if(this.left.)
-			// if (this.left.getData().;
-		//for (DailyWeatherReport aReport: this)
-		//{
-			
-		//}
-		int elt = this.addHigh(year, month);
-		int elements = counter;
-		counter = 0;
-		return elt/elements;
-	}
-*/
+	
 	public DailyWeatherReport getData()
 	{
 		return this.data;
 	}
-	/*
-	public int addHigh(int year, int month)
-	{
-		if (this.data.inMonth(year, month))
-		{	counter++;
-			return this.data.getHigh() + this.left.addHigh(year, month) + this.right.addHigh(year, month);
-		} else { counter++; return this.left.addHigh(year, month) + this.right.addHigh(year, month);}	
-	}
-	public int addLow(int year, int month)
-	{
-		if (this.data.inMonth(year, month))
-		{	counter++;
-			return this.data.getLow() + this.left.addLow(year, month) + this.right.addLow(year, month);
-		} else { counter++; return this.left.addLow(year, month) + this.right.addLow(year, month);}	
-	}
-/*	
-	public int averageLowForMonth(int month, int year) {
-		counter = 0;
-		//LinkedList<Integer> hold = new LinkedList<Integer>();
-		//int elements = this.size();//  int totalHigh = 0;
-			//if(this.data.inMonth(year, month)){
-			//	hold.add(this.data.getHigh());
-			//}
-			//else if(this.left.)
-			// if (this.left.getData().;
-		//for (DailyWeatherReport aReport: this)
-		//{
-			
-		//}
-		int elt = this.addLow(year, month);
-		int elements = counter;
-		counter = 0;
-		return elt/elements;
-	}
-*/
-	/*public void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings) {
-		// TODO Auto-generated method stub
-		
-	}*/
 
 	public LinkedList<DailyWeatherReport> makeList(LinkedList<DailyWeatherReport> list) {
 		// TODO Auto-generated method stub
