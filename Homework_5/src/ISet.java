@@ -8,5 +8,5 @@ public interface ISet {
 	public LinkedList<DailyWeatherReport> makeList(LinkedList<DailyWeatherReport> list);
 	//public LinkedList<Reading> makeList1(LinkedList<Reading> list);
 	public ISet addElt(DailyWeatherReport dailyWeatherReport);
-	
+
 }
