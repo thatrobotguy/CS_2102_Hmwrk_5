@@ -1,23 +1,24 @@
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
-
+//Andrew Schueler and Mary Hatfalvi
 public class DataBST implements IBST {
-	DailyWeatherReport data;
-	IBST left;
-	IBST right;
-	
+	// declare variables
+	private DailyWeatherReport data;
+	private IBST left;
+	private IBST right;
+	// constructor
 	DataBST(DailyWeatherReport data, IBST left, IBST right) {
 		this.data = data;
 		this.left = left;
 		this.right = right;
 	}
-
+	// override constructor
 	DataBST(DailyWeatherReport data) {
 		this.data = data;
 		this.left = new EmptyBST();
 		this.right = new EmptyBST();
 	}
-	
+
 	// returns the number of distinct elements in the BST
 	public int size() {
 		return 1 + this.left.size() + this.right.size();
@@ -42,13 +43,13 @@ public class DataBST implements IBST {
 		else // elt > this.data
 			return this.right.hasElt(elt);
 	}
-	
+
 	// Get the data
 	public DailyWeatherReport getData()
 	{
 		return this.data;
 	}
-	
+
 	// Convert to list.
 	public LinkedList<DailyWeatherReport> makeList(LinkedList<DailyWeatherReport> list) {
 		list.add(this.getData());

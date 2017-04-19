@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import org.junit.Test;
 
 public class Examples {
+	//Andrew Schueler and Mary Hatfalvi
+	// examples for weather monitor
 	LinkedList<Reading> readings = new LinkedList<Reading>();
 	LinkedList<DailyWeatherReport> test = new LinkedList<DailyWeatherReport>();
 	ISet tester = new List();
@@ -108,7 +110,7 @@ public class Examples {
 		weather.addDailyReport(new GregorianCalendar(2014, 5, 27), readings);		
 		assertEquals(102, weather.averageHighForMonth(5, 2014));
 	}
-	
+
 	@Test
 	public void test7() // For kicks
 	{

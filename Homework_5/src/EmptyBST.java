@@ -1,7 +1,8 @@
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
-
+//Andrew Schueler and Mary Hatfalvi
 public class EmptyBST implements IBST {
+	// holder of empty data
 	private DailyWeatherReport data;
 
 	EmptyBST() {
@@ -27,13 +28,9 @@ public class EmptyBST implements IBST {
 	public DailyWeatherReport getData() {
 		return this.data;
 	}
-
+	// return already made list
 	public LinkedList<DailyWeatherReport> 
 	makeList(LinkedList<DailyWeatherReport> list) {
-		return list;
-	}
-
-	public LinkedList<Reading> makeList1(LinkedList<Reading> list) {
 		return list;
 	}
 }
